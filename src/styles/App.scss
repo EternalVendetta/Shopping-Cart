@@ -1,0 +1,61 @@
+/* Variables */
+$lightPurple: #CCA8D8;
+$darkPurple: #8474A1;
+$lightBlue: #6EC6CA;
+$mediumBlue: #08979D;
+$darkBlue: #055B5C;
+$white: #FFFFFF;
+
+/* Functions */
+@mixin flexBox ($x, $y) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+}
+
+/* General */
+html {
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+body > #root {
+    height: 100vh;
+}
+
+.grid-container {
+    height: 100%;
+    display: grid;
+    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+   
+    /* Children */
+
+    header {
+        @include flexBox(start, center);
+        grid-column: 1 / span 6;
+        background-color: $darkPurple;
+
+        /* Little Child */
+
+        a {
+            color: $white;
+            text-decoration: none;
+            padding-left: .5rem;
+        }
+    }
+    
+    main {
+        grid-column: 1 / span 6;
+        grid-row: 2 / span 4;
+        background-color: $white;
+    }
+
+    footer {
+        @include flexBox(center, center);
+        grid-column: 1 / span 6;
+        grid-row: 6 / span 6;
+        background-color: $darkPurple;
+    }
+}
+
+

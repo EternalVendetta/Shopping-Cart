@@ -1,0 +1,75 @@
+/* Variables */
+/* Functions */
+/* General */
+html {
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body > #root {
+  height: 100vh;
+}
+
+.grid-container {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[6];
+  -ms-grid-columns: (1fr)[6];
+      grid-template: repeat(6, 1fr)/repeat(6, 1fr);
+  /* Children */
+}
+
+.grid-container header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  background-color: #8474A1;
+  /* Little Child */
+}
+
+.grid-container header a {
+  color: #FFFFFF;
+  text-decoration: none;
+  padding-left: .5rem;
+}
+
+.grid-container main {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  grid-row: 2 / span 4;
+  background-color: #FFFFFF;
+}
+
+.grid-container footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 6;
+  grid-column: 1 / span 6;
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 6;
+  grid-row: 6 / span 6;
+  background-color: #8474A1;
+}
+/*# sourceMappingURL=App.css.map */
