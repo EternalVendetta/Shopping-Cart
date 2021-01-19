@@ -2,6 +2,7 @@
 @import './variables.scss';
 @import './Functions.scss';
 @import './Filter.scss';
+@import './Cart.scss';
 
 /* General */
 html {
@@ -18,27 +19,16 @@ body > #root {
     color: $lightPurple;
 }
 
+.blue {
+    color: $lightBlue;
+}
+
 .grid-container {
     height: 100%;
     display: grid;
     grid-template: repeat(8, 1fr) / repeat(8, 1fr);
-   
-    /* Children */
-
-    header {
-        @include flexBox(start, center);
-        grid-column: 1 / span 8;
-        background-color: $darkPurple;
-
-        /* Little Child */
-
-        a {
-            color: $white;
-            text-decoration: none;
-            padding-left: .5rem;
-        }
-    }
     
+    /* Children */
     main {
         grid-column: 1 / span 8;
         grid-row: 2 / span 4;

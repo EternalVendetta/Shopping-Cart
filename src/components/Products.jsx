@@ -9,7 +9,7 @@ const Products = (props) => {
         <div>
             <ul className='products'>
                 {
-                    props.products ? props.products.map(product => {
+                    props.products.map(product => {
                         return (
                             <li key={product.id} product={product}>
                                 <div className='product'>
@@ -19,12 +19,12 @@ const Products = (props) => {
                                     </a>
                                     <div className='product-price'>
                                         <h3><i class="fas fa-money-bill-wave" /> {product.price} $</h3>
-                                        <button><i class="fas fa-cart-plus" /> Add To Cart</button>
+                                        <button onClick={() => props.handleAddToCart(product)}><i class="fas fa-cart-plus" /> Add To Cart</button>
                                     </div>
                                 </div>
                             </li>
                         )
-                    }): null
+                    })
                 }
             </ul>
         </div>

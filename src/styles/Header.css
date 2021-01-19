@@ -1,0 +1,99 @@
+/* imports */
+/* Variables */
+/* Colors */
+/* Fonts */
+/* Design */
+/* Transitions */
+/* Functions */
+/* Parent */
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 8;
+  grid-column: 1 / span 8;
+  background-color: #8474A1;
+  border-bottom: 1px dashed #6EC6CA;
+  /* Children */
+}
+
+header .inner-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 20%;
+  /* Little Child */
+}
+
+header .inner-left .brand-logo {
+  width: 80px;
+  height: 80px;
+  background: url("../icons/logo.png");
+  background-position: center;
+  background-size: cover;
+  margin-right: 1rem;
+}
+
+header .inner-left h1 {
+  font-family: "Dancing Script", cursive;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+header .inner-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 25%;
+  /* Little Child */
+}
+
+header .inner-right a {
+  color: #FFFFFF;
+}
+
+header .inner-right button {
+  cursor: pointer;
+  background-color: #055B5C;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  padding: .8rem;
+  border-radius: 100px;
+  font-size: 1rem;
+  padding: .8rem 2rem;
+  -webkit-transition: 250ms ease;
+  transition: 250ms ease;
+}
+
+header .inner-right button:hover {
+  color: #6EC6CA;
+}
+/*# sourceMappingURL=Header.css.map */

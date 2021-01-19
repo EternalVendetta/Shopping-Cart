@@ -1,0 +1,55 @@
+/* imports */
+@import './Variables.scss';
+@import './Functions.scss';
+
+/* Parent */
+header {
+    @include flexBox(space-between, center);
+    grid-column: 1 / span 8;
+    background-color: $darkPurple;
+    border-bottom: 1px dashed $lightBlue;
+    
+    /* Children */
+    .inner-left {
+        @include flexBox(center, center);
+        flex-direction: row;
+        width: 20%;
+
+        /* Little Child */
+        .brand-logo {
+            @include sizing(80px, 80px);
+            background: url('../icons/logo.png');
+            @include backgroundImg(center, cover);
+            margin-right: 1rem;
+        }
+    
+        h1 {
+            font-family: $dancingScript;
+            font-weight: 500;
+            color: $white;
+        }
+    }
+
+    .inner-right {
+        @include flexBox(space-evenly, center);
+        flex-direction: row;
+        width: 25%;
+
+        /* Little Child */
+
+        a {
+            color: $white;
+        }
+
+        button {
+            @include btn;
+            font-size: 1rem;
+            padding: .8rem 2rem;
+            transition: $medium;
+
+            &:hover {
+                color: $lightBlue;
+            }
+        }
+    }
+}

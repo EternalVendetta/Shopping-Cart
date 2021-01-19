@@ -5,17 +5,19 @@ import './styles/App.scss';
 // Data
 import data from './data.json';
 // Components
+import Header from './components/Header';
 import Products from './components/Products';
 import Filter from './components/Filter';
+import Cart from './components/Cart';
 
 const App = () => {
   // States Hook
   const [products, setProducts] = useState(data.products);
+  const [cartItems, setCartItems] = useState([]);
   const [size, setSize] = useState('');
   const [sort, setSort] = useState('Latest');
 
   // Functions
-  
   const handleSort = e => {
     const sort = e.target.value;
     setSort(sort);
@@ -48,12 +50,28 @@ const App = () => {
       }))
     }
   }
+
+  const handleAddToCart = product => {
+    console.log(product)
+    let alreadyInCart = false;
+    cartItems.forEach(item => {
+      if (item._id === product._id) {
+          return alreadyInCart = true;
+      }
+    });
+    if (!alreadyInCart) {
+      setCartItems(cartItems) 
+    }
+  }
+
+  const removeFromCart = product => {
+
+  }
+
   // JSX
   return (
     <div className='grid-container'>
-      <header>
-        <a href="/">Eternal Shopping Cart</a>
-      </header>
+      <Header />
       <main>
         <div className='content'>
           <div className='products-container'>
@@ -64,10 +82,16 @@ const App = () => {
               handleSize={handleSize}
               handleSort={handleSort}
             />
-            <Products products={products} />
+            <Products 
+              products={products} 
+              handleAddToCart={handleAddToCart}  
+            />
           </div>
           <div className='sidebar'>
-            sidebar
+            <Cart
+              cartItems={cartItems}
+              removeFromCart={removeFromCart}
+            />
           </div>
         </div>
       </main>

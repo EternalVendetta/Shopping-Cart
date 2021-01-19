@@ -1,0 +1,57 @@
+/* imports */
+@import './Variables.scss';
+@import './Functions.scss';
+
+/* Parent */
+.cart-empty {
+    @include sizing(100%, auto);
+    @include flexBox(center, center);
+    flex-direction: column;
+    padding: 2rem 0;
+    background-color: $lightBlue;
+    font-family: $montserrat;
+    border-bottom: 3px dashed $white;
+
+    /* Children */
+    .cart-empty-img {
+        @include sizing(128px, 128px);
+        background: url('../icons/box.png');
+        @include backgroundImg(center, cover);
+        animation: bounce 1s infinite linear alternate;
+    }
+
+    h3 {
+        font-family: $dancingScript;
+        color: $darkBlue;
+    }
+}
+
+/* Parent */
+.cart-full {
+    @include sizing(100%, auto);
+    @include flexBox(center, center);
+    font-family: $montserrat;
+}
+
+/* Parent */
+.cart {
+
+    /* Children */
+    .cart-items {
+
+        .remove-btn {
+            @include removeBtn;
+        }
+    }
+}
+
+/* Animations */
+
+@keyframes bounce {
+    from {
+        transform: translate(0px, -15px);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
