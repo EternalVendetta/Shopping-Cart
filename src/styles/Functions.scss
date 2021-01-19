@@ -1,0 +1,20 @@
+/* Functions */
+@mixin flexBox ($x, $y) {
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+}
+
+@mixin sizing ($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin btn {
+    background-color: $darkBlue;
+    border: none;
+    outline: none;
+    padding: .8rem;
+    border-radius: 100px;
+    cursor: pointer;
+}

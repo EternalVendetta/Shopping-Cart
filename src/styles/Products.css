@@ -5,124 +5,6 @@
 /* Design */
 /* Transitions */
 /* Functions */
-/* General */
-html {
-  font-size: 16px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body > #root {
-  height: 100vh;
-  font-family: "Roboto", sans-serif;
-}
-
-.grid-container {
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: (1fr)[8];
-  -ms-grid-columns: (1fr)[8];
-      grid-template: repeat(8, 1fr)/repeat(8, 1fr);
-  /* Children */
-}
-
-.grid-container header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / span 8;
-  background-color: #8474A1;
-  /* Little Child */
-}
-
-.grid-container header a {
-  color: #FFFFFF;
-  text-decoration: none;
-  padding-left: .5rem;
-}
-
-.grid-container main {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / span 8;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2 / span 4;
-  background-color: #FFFFFF;
-  /* Child */
-}
-
-.grid-container main .content {
-  width: 100%;
-  height: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 6;
-  grid-column: 1 / span 6;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 6;
-  grid-row: 2 / span 6;
-  /* Little Children */
-}
-
-.grid-container main .content .products-container {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-}
-
-.grid-container main .content .sidebar {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  background-color: #CCA8D8;
-}
-
-.grid-container footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 8;
-  grid-column: 1 / span 8;
-  -ms-grid-row: 7;
-  -ms-grid-row-span: 8;
-  grid-row: 7 / span 8;
-  background-color: #8474A1;
-}
-
-/* Imports */
-/* Imports */
-/* Variables */
-/* Colors */
-/* Fonts */
-/* Design */
-/* Transitions */
-/* Functions */
 .products {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -185,6 +67,8 @@ body > #root {
 
 .products li .product a {
   font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  color: #055B5C;
   text-align: center;
 }
 
@@ -230,4 +114,4 @@ body > #root {
 .products li .product-price button:hover {
   color: #6EC6CA;
 }
-/*# sourceMappingURL=App.css.map */
+/*# sourceMappingURL=Products.css.map */

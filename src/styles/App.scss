@@ -1,17 +1,6 @@
-/* Variables */
-$lightPurple: #CCA8D8;
-$darkPurple: #8474A1;
-$lightBlue: #6EC6CA;
-$mediumBlue: #08979D;
-$darkBlue: #055B5C;
-$white: #FFFFFF;
-
-/* Functions */
-@mixin flexBox ($x, $y) {
-    display: flex;
-    justify-content: $x;
-    align-items: $y;
-}
+/* Imports */
+@import './variables.scss';
+@import './Functions.scss';
 
 /* General */
 html {
@@ -21,18 +10,19 @@ html {
 
 body > #root {
     height: 100vh;
+    font-family: $roboto;
 }
 
 .grid-container {
     height: 100%;
     display: grid;
-    grid-template: repeat(6, 1fr) / repeat(6, 1fr);
+    grid-template: repeat(8, 1fr) / repeat(8, 1fr);
    
     /* Children */
 
     header {
         @include flexBox(start, center);
-        grid-column: 1 / span 6;
+        grid-column: 1 / span 8;
         background-color: $darkPurple;
 
         /* Little Child */
@@ -45,17 +35,39 @@ body > #root {
     }
     
     main {
-        grid-column: 1 / span 6;
+        grid-column: 1 / span 8;
         grid-row: 2 / span 4;
         background-color: $white;
+
+        /* Child */
+        .content {
+          @include sizing(100%, 100%);
+          height: auto;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          grid-column: 1 / span 6;
+          grid-row: 2 / span 6;
+
+          /* Little Children */
+          .products-container {
+            flex: 3;
+          }
+
+          .sidebar {
+            flex: 1;
+            background-color: $lightPurple;
+          }
+        }
     }
 
     footer {
         @include flexBox(center, center);
-        grid-column: 1 / span 6;
-        grid-row: 6 / span 6;
+        grid-column: 1 / span 8;
+        grid-row: 7 / span 8;
         background-color: $darkPurple;
     }
 }
 
-
+/* Imports */
+@import './Products.scss';

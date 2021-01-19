@@ -1,0 +1,64 @@
+ /* Imports */
+ @import './Variables.scss';
+ @import './Functions.scss';
+
+.products {
+    @include flexBox(center, center);
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    list-style: none;
+
+    /* Children */
+    li {
+        @include flexBox(center, center);
+        flex: 1 1 2rem;
+        height: 50rem;
+        
+        /* Little CHild */
+        .product {
+            @include flexBox(space-around, start);
+            flex-direction: column;
+            background-color: $lightBlue;
+            box-shadow: $borderShadow;
+            transition: $fast;
+
+            /* Child of Product */
+            img {
+                max-width: 25rem;
+            }
+            
+            a {
+                font-family: $montserrat;
+                text-decoration: none;
+                color: $darkBlue;
+                text-align: center;
+            }
+            &:hover {
+                box-shadow: $lightShadow;
+            }
+        }
+        
+        .product-price {
+            @include flexBox(space-around, center);
+            flex-direction: row;
+            width: 100%;
+            padding: 2rem 0; 
+            background-color: $darkPurple;
+            
+            h3 {
+                color: $white;
+            }
+
+            button {
+                @include btn;
+                color: $white;
+                transition: $medium;
+
+                &:hover {
+                    color: $lightBlue;
+                }
+            }
+        }
+    }
+}
