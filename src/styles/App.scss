@@ -1,6 +1,7 @@
 /* Imports */
 @import './variables.scss';
 @import './Functions.scss';
+@import './Filter.scss';
 
 /* General */
 html {
@@ -11,6 +12,10 @@ html {
 body > #root {
     height: 100vh;
     font-family: $roboto;
+}
+
+.pink {
+    color: $lightPurple;
 }
 
 .grid-container {

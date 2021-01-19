@@ -1,0 +1,53 @@
+/* imports */
+/* Functions */
+/* Variables */
+/* Colors */
+/* Fonts */
+/* Design */
+/* Transitions */
+/* Parent */
+.filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 5rem;
+  font-family: "Montserrat", sans-serif;
+  background-color: #6EC6CA;
+  /* Children */
+}
+
+.filter .filter-result, .filter .filter-sort, .filter .filter-size {
+  width: 30%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.filter h3 {
+  color: #055B5C;
+}
+
+.filter select {
+  outline: none;
+  border: none;
+  padding: .4rem;
+  border-radius: 5px;
+}
+
+.filter option {
+  border: none;
+}
+/*# sourceMappingURL=Filter.css.map */

@@ -1,0 +1,29 @@
+/* imports */
+@import './Functions.scss';
+@import './Variables.scss';
+
+/* Parent */
+.filter {
+    @include flexBox(space-around, center);
+    @include sizing(100%, 5rem);
+    font-family: $montserrat;
+    background-color: $lightBlue;
+
+    /* Children */
+    .filter-result, .filter-sort, .filter-size {
+        @include sizing(30%, auto);
+        @include flexBox(space-evenly, center);
+    }
+
+    h3 {
+        color: $darkBlue;
+    }
+
+    select {
+        @include select;
+    }
+
+    option {
+        border: none;
+    }
+}
