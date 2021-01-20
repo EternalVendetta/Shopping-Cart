@@ -11,13 +11,13 @@ import Filter from './components/Filter';
 import Cart from './components/Cart';
 
 const App = () => {
-  // States Hook
+  // States Hooks
   const [products, setProducts] = useState(data.products);
   const [cartItems, setCartItems] = useState([]);
   const [size, setSize] = useState('');
   const [sort, setSort] = useState('Latest');
 
-  // Functions
+  // Filter the Products by both Price & Time
   const handleSort = e => {
     const sort = e.target.value;
     setSort(sort);
@@ -34,6 +34,7 @@ const App = () => {
     }))
   }
   
+  // Filter the Products by their Sizes
   const handleSize = e => {
     // Remove default Behaviours
     e.preventDefault();
@@ -51,21 +52,26 @@ const App = () => {
     }
   }
 
+  // Add a Product to the Cart
   const handleAddToCart = product => {
-    console.log(product)
+    const items = cartItems.slice();
     let alreadyInCart = false;
-    cartItems.forEach(item => {
+    items.forEach(item => {
       if (item._id === product._id) {
-          return alreadyInCart = true;
+        item.count++;
+        alreadyInCart = true;
       }
     });
     if (!alreadyInCart) {
-      setCartItems(cartItems) 
+      items.push({ ...product, count: 1 })
     }
+    setCartItems(items);
   }
 
+  // Remove a Profuct from the Cart
   const removeFromCart = product => {
-
+    const items = cartItems.slice(); 
+    setCartItems(items.filter(x => x._id !== product._id))
   }
 
   // JSX

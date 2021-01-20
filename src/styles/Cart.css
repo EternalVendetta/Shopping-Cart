@@ -41,7 +41,6 @@
 
 .cart-empty h3 {
   font-family: "Dancing Script", cursive;
-  color: #055B5C;
 }
 
 /* Parent */
@@ -60,16 +59,143 @@
   font-family: "Montserrat", sans-serif;
 }
 
+.cart-full h3 {
+  text-align: center;
+}
+
 /* Parent */
-.cart {
+.cart .cart-items {
+  list-style: none;
+}
+
+.cart .cart-items li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: auto;
+  font-family: "Montserrat", sans-serif;
+  color: #055B5C;
+  margin: 2rem 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   /* Children */
 }
 
-.cart .cart-items .remove-btn {
+.cart .cart-items li img {
+  width: 5rem;
+  height: auto;
+}
+
+.cart .cart-items li .cart-items-description {
+  width: 100%;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #6EC6CA;
+  border-radius: 0px 10px 10px 0px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.cart .cart-items li .cart-items-description .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart .cart-items li .cart-items-description .left p:first-child {
+  font-size: .8rem;
+  width: 50%;
+}
+
+.cart .cart-items li .cart-items-description .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cart .cart-items li .cart-items-description .right .remove-btn {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
   outline: none;
   border: none;
   border-radius: 5px;
+  background: url("../icons/remove.png");
+  -webkit-transition: 150ms linear;
+  transition: 150ms linear;
+}
+
+.cart .cart-items li .cart-items-description .right .remove-btn:hover {
+  background: url("../icons/remove_hover.png");
+}
+
+/* Parent */
+.cart-payment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  /* Children */
+}
+
+.cart-payment .total {
+  font-family: "Dancing Script", cursive;
+}
+
+.cart-payment .payment-btn {
   cursor: pointer;
+  background-color: #055B5C;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  padding: .8rem;
+  border-radius: 100px;
+  -webkit-transition: 150ms linear;
+  transition: 150ms linear;
+}
+
+.cart-payment .payment-btn:hover {
+  color: #6EC6CA;
 }
 
 /* Animations */

@@ -22,7 +22,6 @@
 
     h3 {
         font-family: $dancingScript;
-        color: $darkBlue;
     }
 }
 
@@ -31,16 +30,77 @@
     @include sizing(100%, auto);
     @include flexBox(center, center);
     font-family: $montserrat;
+
+    h3 {
+        text-align: center;
+    }
 }
 
 /* Parent */
 .cart {
+    .cart-items {
+        list-style: none;
+        li {
+            @include flexBox(space-between, center);
+            @include sizing(90%, auto);
+            font-family: $montserrat;
+            color: $darkBlue;
+            margin: 2rem 0;
+            flex-direction: row;
+
+            img {
+                @include sizing(5rem, auto);
+            }
+            /* Children */
+            .cart-items-description {
+                @include sizing(100%, 5rem);
+                @include flexBox(center, center);
+                background-color: $lightBlue;
+                border-radius: 0px 10px 10px 0px;
+                flex-direction: row;
+
+                .left {
+                    @include flexBox(space-evenly, center);
+                    p:first-child {
+                        font-size: .8rem;
+                        width: 50%;
+                    }   
+                }
+
+                .right {
+                    @include flexBox(center, center);
+                    .remove-btn {
+                        @include sizing(32px, 32px);
+                        @include removeBtn;
+                        background: url('../icons/remove.png');
+                        transition: $fast;
+        
+                        &:hover {
+                            background: url('../icons/remove_hover.png');
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Parent */
+.cart-payment {
+    @include flexBox(space-evenly, center);
+    flex-direction: row;
 
     /* Children */
-    .cart-items {
+    .total {
+        font-family: $dancingScript;
+    }
 
-        .remove-btn {
-            @include removeBtn;
+    .payment-btn {
+        @include btn;
+        transition: $fast;
+
+        &:hover {
+            color: $lightBlue;
         }
     }
 }
