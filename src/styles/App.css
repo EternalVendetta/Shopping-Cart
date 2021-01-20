@@ -101,7 +101,6 @@
 
 .cart-empty h3 {
   font-family: "Dancing Script", cursive;
-  color: #055B5C;
 }
 
 /* Parent */
@@ -125,10 +124,6 @@
 }
 
 /* Parent */
-.cart {
-  /* Children */
-}
-
 .cart .cart-items {
   list-style: none;
 }
@@ -240,8 +235,27 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  /* Child */
-  background-color: red;
+  /* Children */
+}
+
+.cart-payment .total {
+  font-family: "Dancing Script", cursive;
+}
+
+.cart-payment .payment-btn {
+  cursor: pointer;
+  background-color: #055B5C;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  padding: .8rem;
+  border-radius: 100px;
+  -webkit-transition: 150ms linear;
+  transition: 150ms linear;
+}
+
+.cart-payment .payment-btn:hover {
+  color: #6EC6CA;
 }
 
 /* Animations */
@@ -264,6 +278,20 @@
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
   }
+}
+
+/* imports */
+/* Variables */
+/* Colors */
+/* Fonts */
+/* Design */
+/* Transitions */
+/* Functions */
+/* Parent */
+.form-container {
+  width: 100%;
+  height: auto;
+  outline: none;
 }
 
 /* General */

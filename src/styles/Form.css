@@ -1,0 +1,96 @@
+/* imports */
+/* Variables */
+/* Colors */
+/* Fonts */
+/* Design */
+/* Transitions */
+/* Functions */
+/* Parent */
+.form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: auto;
+  /* Children */
+}
+
+.form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  height: auto;
+  padding: 2rem 0;
+  margin: 2rem 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  /* Little Child */
+}
+
+.form-container form label {
+  width: 50%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  color: #055B5C;
+  margin: 1rem 0;
+}
+
+.form-container form input {
+  width: 80%;
+  height: 2rem;
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  padding-left: 1rem;
+  -webkit-transition: 250ms ease;
+  transition: 250ms ease;
+}
+
+.form-container form input:focus {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid #8474A1;
+}
+
+.form-container form .btn-submit {
+  cursor: pointer;
+  background-color: #055B5C;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  padding: .8rem;
+  border-radius: 100px;
+  -webkit-transition: 150ms linear;
+  transition: 150ms linear;
+  margin-top: 1rem;
+}
+
+.form-container form .btn-submit:hover {
+  color: #6EC6CA;
+}
+/*# sourceMappingURL=Form.css.map */

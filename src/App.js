@@ -13,7 +13,7 @@ import Cart from './components/Cart';
 const App = () => {
   // States Hooks
   const [products, setProducts] = useState(data.products);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
   const [size, setSize] = useState('');
   const [sort, setSort] = useState('Latest');
 
@@ -38,7 +38,6 @@ const App = () => {
   const handleSize = e => {
     // Remove default Behaviours
     e.preventDefault();
-
     // If the value is Empty
     if (e.target.value === "All") {
       setProducts(data.products);
@@ -66,12 +65,20 @@ const App = () => {
       items.push({ ...product, count: 1 })
     }
     setCartItems(items);
+    // Save to the Local Storage
+    localStorage.setItem('cartItems', JSON.stringify(items))
   }
 
   // Remove a Profuct from the Cart
   const removeFromCart = product => {
     const items = cartItems.slice(); 
     setCartItems(items.filter(x => x._id !== product._id))
+    localStorage.setItem('cartItems', JSON.stringify(items.filter(x => x._id !== product._id)))
+  }
+
+  // Create an Order
+  const createOrder = order => {
+    alert('Thanks for your order ' + order.name)
   }
 
   // JSX
@@ -97,6 +104,7 @@ const App = () => {
             <Cart
               cartItems={cartItems}
               removeFromCart={removeFromCart}
+              createOrder={createOrder}
             />
           </div>
         </div>

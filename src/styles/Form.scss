@@ -1,0 +1,49 @@
+/* imports */
+@import './Variables.scss';
+@import './Functions.scss';
+
+/* Parent */
+.form-container {
+    @include flexBox(center, center);
+    @include sizing(100%, auto);
+    
+    /* Children */
+    form {
+        @include flexBox(center, center);
+        @include sizing(80%, auto);
+        padding: 2rem 0;
+        margin: 2rem 0;
+        flex-direction: column;
+
+        /* Little Child */
+        label {
+            @include sizing(50%, auto);
+            @include flexBox(space-evenly, center);
+            font-family: $dancingScript;
+            font-size: 1.5rem;
+            color: $darkBlue;
+            margin: 1rem 0;
+        }
+
+        input {
+            @include sizing(80%, 2rem);
+            @include input;
+            transition: $medium;
+
+            &:focus {
+                box-shadow: $borderShadow;
+                border: 1px solid $darkPurple;
+            }
+        }
+
+        .btn-submit {
+            @include btn;
+            transition: $fast;
+            margin-top: 1rem;
+
+            &:hover {
+                color: $lightBlue;
+            }
+        }
+    }
+}

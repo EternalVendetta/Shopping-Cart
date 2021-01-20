@@ -34,6 +34,13 @@
   border-radius: 5px;
 }
 
+@mixin input {
+  outline: none;
+  border: none;
+  border-radius: 100px;
+  padding-left: 1rem;
+}
+
 @mixin backgroundImg ($position, $size) {
   background-position: $position;
   background-size: $size;

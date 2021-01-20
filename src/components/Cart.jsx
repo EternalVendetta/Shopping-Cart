@@ -1,7 +1,46 @@
 // React
-import React from 'react';
+import React, { useState } from 'react';
+// Component
+import Form from './Form';
 
 const Cart = (props) => {
+    // State Hook
+    const [showCheckOut, setShowCheckOut] = useState(false);
+    const [input, setInput] = useState({
+        email: '',
+        name: '',
+        address: ''
+    })
+
+    // Handle the inputs field
+    const handleInput = e => {
+        const value = e.target.value;
+        // Change the state with the input value
+        setInput({
+            // Copy the State
+            ...input,
+            // Set the State's Value depending on the input choosen
+            [e.target.name] : value
+        })
+    }
+
+    // Create an Order when CLicked
+    const createOrder = e => {
+        // Remove the default behaviours
+        e.preventDefault();
+        // Create an Order Onject
+        const order = {
+            // Refer values to States
+            email: input.email,
+            name: input.name,
+            address: input.address,
+            // Refer to the Items in the Cart
+            cartItems: props.cartItems
+        }
+        // Execute and pass the Object above as Argument
+        props.createOrder(order);
+    }
+
     // JSx
     return (
         <div>
@@ -32,7 +71,10 @@ const Cart = (props) => {
                                             <p>{item.price}$ x {item.count}</p>
                                        </div>
                                        <div className='right'>
-                                         <button onClick={() => props.removeFromCart(item)} className='remove-btn'></button>
+                                         <button 
+                                            onClick={() => props.removeFromCart(item)} 
+                                            className='remove-btn'>
+                                        </button>
                                         </div>
                                    </div>
                                </li>
@@ -47,10 +89,23 @@ const Cart = (props) => {
                         <div className='total'>
                             <h3>Total: {props.cartItems.reduce((a, c) => a + c.price * c.count, 0).toFixed(2)}$</h3>
                         </div>
-                        <button className='payment-btn'><i class="fas fa-shopping-basket" /> Proceed</button>
+                        <button 
+                            className='payment-btn'
+                            onClick={() => setShowCheckOut(true)}
+                        >
+                            <i class="fas fa-shopping-basket" /> Proceed
+                        </button>
                 </div>
             )}
-            
+            {showCheckOut &&
+                <Form 
+                    handleInput={handleInput} 
+                    email={input.email}
+                    name={input.name}
+                    address={input.address}
+                    createOrder={createOrder}
+                />
+            }
         </div>
     );
 }

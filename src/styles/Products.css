@@ -100,12 +100,13 @@
 }
 
 .products li .product-price button {
+  cursor: pointer;
   background-color: #055B5C;
+  color: #FFFFFF;
   border: none;
   outline: none;
   padding: .8rem;
   border-radius: 100px;
-  cursor: pointer;
   -webkit-transition: 250ms ease;
   transition: 250ms ease;
 }

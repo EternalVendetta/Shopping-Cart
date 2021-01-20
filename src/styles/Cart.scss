@@ -47,18 +47,23 @@
             color: $darkBlue;
             margin: 2rem 0;
             flex-direction: row;
-
+            
             img {
                 @include sizing(5rem, auto);
+                border-radius: 5px;
             }
             /* Children */
             .cart-items-description {
                 @include sizing(100%, 5rem);
                 @include flexBox(center, center);
                 background-color: $lightBlue;
-                border-radius: 0px 10px 10px 0px;
+                transition: $medium;
+                border-radius: 0px 5px 5px 0px;
                 flex-direction: row;
-
+                
+                &:hover {
+                    box-shadow: $lightShadow;
+                }
                 .left {
                     @include flexBox(space-evenly, center);
                     p:first-child {
