@@ -94,18 +94,18 @@ const App = () => {
               count={products.length}
               handleSize={handleSize}
               handleSort={handleSort}
-            />
+              />
             <Products 
               products={products} 
               handleAddToCart={handleAddToCart}  
-            />
+              />
           </div>
           <div className='sidebar'>
             <Cart
               cartItems={cartItems}
               removeFromCart={removeFromCart}
               createOrder={createOrder}
-            />
+              />
           </div>
         </div>
       </main>

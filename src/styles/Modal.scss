@@ -1,0 +1,69 @@
+/* imports */
+@import './Variables.scss';
+@import './Functions.scss';
+
+/* Parent */
+
+.btn-modal{
+    background: none;
+    border: none;
+    cursor: pointer
+}
+
+.product-details {
+    @include sizing(100%, 100%);
+    @include flexBox(space-around, center);
+    flex-direction: row;
+    
+    /* Children */
+    img {
+        @include flexBox(start, center);
+        box-shadow: $lightShadow;
+    }
+
+    .product-description {
+        @include flexBox(space-between, center);
+        @include sizing(30%, 635px);
+        flex-direction: column;
+        
+        /* Little child */
+        
+        h1 {
+            color: $lightBlue;
+            font-family: $dancingScript;
+            font-weight: 500;
+            text-align: center;
+            font-size: 2.5rem;
+        }
+        
+        h3 {
+            text-align: justify;
+            line-height: 2rem;
+        }
+        
+        button {
+            @include btn;
+        }
+
+        .product-sizes {
+            @include sizing(100%, auto);
+            @include flexBox(space-between, center);
+
+            h4 {
+                color: $darkBlue;
+            }
+
+            span {
+                font-size: 1.6rem;
+                font-family: $dancingScript;
+                color: $lightBlue;
+            }
+
+        }
+    }
+
+    .vertical-border {
+        height: 75%;
+        border-left: 2px solid $darkBlue;
+    }
+}

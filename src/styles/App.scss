@@ -4,6 +4,7 @@
 @import './Filter.scss';
 @import './Cart.scss';
 @import './Form.scss';
+@import './Modal.scss';
 
 /* General */
 html {
@@ -56,7 +57,7 @@ h3 {
 
           .sidebar {
             flex: 1;
-            background-color: $lightPurple;
+            background-color: $lightBlue;
           }
         }
     }

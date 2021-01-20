@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 // Component
 import Form from './Form';
+// React-Reveal (animations)
+import Fade from 'react-reveal/Fade';
 
 const Cart = (props) => {
     // State Hook
@@ -57,31 +59,33 @@ const Cart = (props) => {
             }
 
             <div className='cart'>
-                <ul className='cart-items'>
-                    {
-                        props.cartItems.map(item => {
-                           return (
-                               <li key={item._id}>
-                                   <div>
-                                        <img src={item.image} alt={item.title}/>
-                                   </div>
-                                   <div className='cart-items-description'>
-                                       <div className='left'>
-                                            <p>{item.title}</p> 
-                                            <p>{item.price}$ x {item.count}</p>
-                                       </div>
-                                       <div className='right'>
-                                         <button 
-                                            onClick={() => props.removeFromCart(item)} 
-                                            className='remove-btn'>
-                                        </button>
+                <Fade left cascade>
+                    <ul className='cart-items'>
+                        {
+                            props.cartItems.map(item => {
+                            return (
+                                <li key={item._id}>
+                                    <div>
+                                            <img src={item.image} alt={item.title}/>
+                                    </div>
+                                    <div className='cart-items-description'>
+                                        <div className='left'>
+                                                <p>{item.title}</p> 
+                                                <p>{item.price}$ x {item.count}</p>
                                         </div>
-                                   </div>
-                               </li>
-                           );
-                       }) 
-                    }
-                </ul>
+                                        <div className='right'>
+                                                <button 
+                                                    onClick={() => props.removeFromCart(item)} 
+                                                    className='remove-btn'>
+                                                </button>
+                                        </div>
+                                    </div>
+                                </li>
+                            );
+                        }) 
+                        }
+                    </ul>
+                </Fade>
             </div>
 
             {props.cartItems.length !== 0 && (

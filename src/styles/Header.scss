@@ -20,7 +20,7 @@ header {
             @include sizing(80px, 80px);
             background: url('../icons/logo.png');
             @include backgroundImg(center, cover);
-            margin-right: 1rem;
+            margin: 0 1rem;
         }
     
         h1 {
