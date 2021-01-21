@@ -1,5 +1,9 @@
 // React 
 import React, { useState } from 'react';
+// React-Redux
+import { Provider } from 'react-redux';
+// Store
+import { store } from './redux/store';
 // Scss
 import './styles/App.scss';
 // Data
@@ -83,34 +87,36 @@ const App = () => {
 
   // JSX
   return (
-    <div className='grid-container'>
-      <Header />
-      <main>
-        <div className='content'>
-          <div className='products-container'>
-            <Filter 
-              size={size}
-              sort={sort}
-              count={products.length}
-              handleSize={handleSize}
-              handleSort={handleSort}
-              />
-            <Products 
-              products={products} 
-              handleAddToCart={handleAddToCart}  
-              />
+    <Provider store={store}>
+      <div className='grid-container'>
+        <Header />
+        <main>
+          <div className='content'>
+            <div className='products-container'>
+              <Filter 
+                size={size}
+                sort={sort}
+                count={products.length}
+                handleSize={handleSize}
+                handleSort={handleSort}
+                />
+              <Products 
+                products={products} 
+                handleAddToCart={handleAddToCart}  
+                />
+            </div>
+            <div className='sidebar'>
+              <Cart
+                cartItems={cartItems}
+                removeFromCart={removeFromCart}
+                createOrder={createOrder}
+                />
+            </div>
           </div>
-          <div className='sidebar'>
-            <Cart
-              cartItems={cartItems}
-              removeFromCart={removeFromCart}
-              createOrder={createOrder}
-              />
-          </div>
-        </div>
-      </main>
-        {/* Footer goes here */}
-    </div>
+        </main>
+          {/* Footer goes here */}
+      </div>
+    </Provider>
   );
 }
 

@@ -1,14 +1,22 @@
 // React
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // React-Reveal (animations)
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
 // React Modal
 import Modal from 'react-modal';
+// React-Redux API 
+import { connect } from 'react-redux';
+// Actions
+import { fetchProducts } from '../redux/actions/productActions';
 
 const Products = (props) => {
     // State Hook
     const [product, setProduct] = useState(null);
+
+    useEffect(() => {
+        fetchProducts();
+    }, [])
 
     // Open the Modal on the Image selected
     const openModal = product => {
@@ -26,26 +34,30 @@ const Products = (props) => {
     return (
         <div>
             <Fade bottom cascade>
-                <ul className='products'>
-                    {
-                        props.products.map(product => {
-                            return (
-                                <li key={product.id} product={product}>
-                                    <div className='product'>
-                                        <a href={"#" + product._id} onClick={() => openModal(product)}>
-                                            <img src={product.image} alt={product.title} />
-                                            <p><i class="fas fa-link" /> {product.title}</p>
-                                        </a>
-                                        <div className='product-price'>
-                                            <h3><i class="fas fa-money-bill-wave" /> {product.price} $</h3>
-                                            <button onClick={() => props.handleAddToCart(product)}><i class="fas fa-cart-plus" /> Add To Cart</button>
+                {
+                    !props.products ? <div>Loading...</div>
+                    :
+                    <ul className='products'>
+                        {
+                            props.products.map(product => {
+                                return (
+                                    <li key={product.id} product={product}>
+                                        <div className='product'>
+                                            <a href={"#" + product._id} onClick={() => openModal(product)}>
+                                                <img src={product.image} alt={product.title} />
+                                                <p><i class="fas fa-link" /> {product.title}</p>
+                                            </a>
+                                            <div className='product-price'>
+                                                <h3><i class="fas fa-money-bill-wave" /> {product.price} $</h3>
+                                                <button onClick={() => props.handleAddToCart(product)}><i class="fas fa-cart-plus" /> Add To Cart</button>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                }
             </Fade>
             {
                 product && (
@@ -91,4 +103,5 @@ const Products = (props) => {
     );
 }
 
-export default Products;
+
+export default connect((state) => ({ product: state.products.items }), fetchProducts)(Products);

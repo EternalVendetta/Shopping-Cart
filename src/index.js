@@ -1,5 +1,8 @@
+// React
 import React from 'react';
+// ReactDOM
 import ReactDOM from 'react-dom';
+// Css
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
