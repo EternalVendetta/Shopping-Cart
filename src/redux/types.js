@@ -1,1 +1,5 @@
+// Products
 export const FETCH_PRODUCTS = 'FETCH_PRODUCTS';
+// Filters
+export const FILTER_PRODUCTS_BY_SIZE = 'FILTER_PRODUCT_BY_SIZE';
+export const ORDER_PRODUCTS_BY_PRICE = 'ORDER_PRODUCT_BY_PRICE';
